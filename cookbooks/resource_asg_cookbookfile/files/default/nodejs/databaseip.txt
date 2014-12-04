@@ -1,0 +1,128 @@
+the ffi-yajl and yajl-ruby gems have incompatible C libyajl libs and should not be loaded in the same Ruby VM
+falling back to ffi which might work (or might not, no promises)
+ffi-yajl/json_gem is deprecated, these monkeypatches will be dropped shortly
+Bootstrapping Chef on 159.8.56.3
+159.8.56.3 Starting Chef Client, version 11.6.0[0m
+159.8.56.3 resolving cookbooks for run list: ["docker-1"][0m
+159.8.56.3 Synchronizing Cookbooks:[0m
+159.8.56.3   - docker-1[0m
+159.8.56.3   - chef-docker[0m
+159.8.56.3   - apt[0m
+159.8.56.3   - aufs[0m
+159.8.56.3   - modules[0m
+159.8.56.3   - device-mapper[0m
+159.8.56.3   - git[0m
+159.8.56.3   - runit[0m
+159.8.56.3   - golang[0m
+159.8.56.3   - homebrew[0m
+159.8.56.3   - iptables[0m
+159.8.56.3   - lxc[0m
+159.8.56.3   - dpkg_autostart[0m
+159.8.56.3   - polipo[0m
+159.8.56.3   - iptables-ng[0m
+159.8.56.3   - sysctl[0m
+159.8.56.3   - ohai[0m
+159.8.56.3   - yum-epel[0m
+159.8.56.3   - yum[0m
+159.8.56.3   - docker[0m
+159.8.56.3 Compiling Cookbooks...[0m
+159.8.56.3 [2014-12-03T06:30:23-06:00] WARN: Cloning resource attributes for docker_container[jai11/ubuntu_sl_ssh] from prior resource (CHEF-3694)
+159.8.56.3 [2014-12-03T06:30:23-06:00] WARN: Previous docker_container[jai11/ubuntu_sl_ssh]: /var/chef/cache/cookbooks/docker-1/recipes/default.rb:23:in `from_file'
+159.8.56.3 [2014-12-03T06:30:23-06:00] WARN: Current  docker_container[jai11/ubuntu_sl_ssh]: /var/chef/cache/cookbooks/docker-1/recipes/default.rb:30:in `from_file'
+159.8.56.3 Converging 20 resources[0m
+159.8.56.3 Recipe: chef-docker::default[0m
+159.8.56.3   * log[breaking_changes_alert] action write[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 Recipe: apt::default[0m
+159.8.56.3   * execute[apt-get-update] action run[0m
+159.8.56.3  (skipped due to not_if)[0m
+159.8.56.3   * execute[apt-get update] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3 
+159.8.56.3   * execute[apt-get autoremove] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3   * execute[apt-get autoclean] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3   * package[update-notifier-common] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * execute[apt-get-update-periodic] action run[0m
+159.8.56.3  (skipped due to only_if)[0m
+159.8.56.3   * directory[/var/cache/local] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * directory[/var/cache/local/preseeding] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 Recipe: chef-docker::default[0m
+159.8.56.3   * package[apt-transport-https] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * package[bsdtar] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * directory[docker-graph] action create[0m
+159.8.56.3  (skipped due to not_if)[0m
+159.8.56.3 Recipe: docker::package[0m
+159.8.56.3   * apt_repository[docker] action add[0m
+159.8.56.3 Recipe: <Dynamically Defined Resource>[0m
+159.8.56.3   * execute[install-key A88D21E9] action run[0m
+159.8.56.3  (skipped due to not_if)[0m
+159.8.56.3   * file[/var/lib/apt/periodic/update-success-stamp] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3   * execute[apt-cache gencaches] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3   * execute[apt-get update] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3   * file[/etc/apt/sources.list.d/docker.list] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 Recipe: docker::package[0m
+159.8.56.3   * package[lxc-docker] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 Recipe: docker::upstart[0m
+159.8.56.3   * template[/etc/init/docker.conf] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * template[/etc/default/docker] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * service[docker] action start[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 Recipe: docker-1::default[0m
+159.8.56.3   * docker_image[jai11/ubuntu_sl_ssh] action pull[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * docker_container[jai11/ubuntu_sl_ssh] action run[0m
+159.8.56.3 Recipe: <Dynamically Defined Resource>[0m
+159.8.56.3   * package[inotify-tools] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * template[/etc/init/jenkinsDB1.conf] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * service[jenkinsDB1] action enable[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 
+159.8.56.3   * service[jenkinsDB1] action start[0m
+159.8.56.3 [32m
+159.8.56.3     - start service service[jenkinsDB1][0m
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * package[inotify-tools] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3   * template[/etc/init/jenkinsDB1.conf] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3   * service[jenkinsDB1] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3 Recipe: docker-1::default[0m
+159.8.56.3   * docker_container[jai11/ubuntu_sl_ssh] action run[0m[2014-12-03T06:30:28-06:00] WARN: Cloning resource attributes for package[inotify-tools] from prior resource (CHEF-3694)
+159.8.56.3 [2014-12-03T06:30:28-06:00] WARN: Previous package[inotify-tools]: /var/chef/cache/cookbooks/docker/providers/container.rb:490:in `service_create_upstart'
+159.8.56.3 [2014-12-03T06:30:28-06:00] WARN: Current  package[inotify-tools]: /var/chef/cache/cookbooks/docker/providers/container.rb:490:in `service_create_upstart'
+159.8.56.3 Recipe: <Dynamically Defined Resource>[0m
+159.8.56.3   * package[inotify-tools] action install[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * template[/etc/init/jenkinsDB2.conf] action create[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3   * service[jenkinsDB2] action enable[0m
+159.8.56.3  (up to date)[0m
+159.8.56.3 
+159.8.56.3   * service[jenkinsDB2] action start[0m
+159.8.56.3 [32m
+159.8.56.3     - start service service[jenkinsDB2][0m
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * package[inotify-tools] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3   * template[/etc/init/jenkinsDB2.conf] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3   * service[jenkinsDB2] action nothing[0m (skipped due to action :nothing)[0m
+159.8.56.3 Chef Client finished, 5 resources updated[0m

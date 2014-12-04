@@ -1,0 +1,1845 @@
+the ffi-yajl and yajl-ruby gems have incompatible C libyajl libs and should not be loaded in the same Ruby VM
+falling back to ffi which might work (or might not, no promises)
+ffi-yajl/json_gem is deprecated, these monkeypatches will be dropped shortly
+Bootstrapping Chef on 159.8.56.3
+159.8.56.3 --2014-12-03 12:33:10--  https://www.opscode.com/chef/install.sh
+159.8.56.3 Resolving www.opscode.com (www.opscode.com)... 
+159.8.56.3 184.106.28.91
+159.8.56.3 Connecting to www.opscode.com (www.opscode.com)|184.106.28.91|:443... 
+159.8.56.3 connected.
+159.8.56.3 HTTP request sent, awaiting response... 
+159.8.56.3 200 OK
+159.8.56.3 Length: 16472 (16K) [application/x-sh]
+159.8.56.3 Saving to: 'STDOUT'
+159.8.56.3 
+159.8.56.3  0% [                                       ] 0           --.-K/s              
+159.8.56.3 
+159.8.56.3 100%[======================================>] 16,472      --.-K/s   in 0s      
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 2014-12-03 12:33:11 (208 MB/s) - written to stdout [16472/16472]
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 Downloading Chef 11.6.0 for ubuntu...
+159.8.56.3 downloading https://www.opscode.com/chef/metadata?v=11.6.0&prerelease=false&nightlies=false&p=ubuntu&pv=14.04&m=x86_64
+159.8.56.3   to file /tmp/install.sh.25/metadata.txt
+159.8.56.3 trying wget...
+159.8.56.3 url	https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/13.04/x86_64/chef_11.6.0-1.ubuntu.13.04_amd64.deb
+159.8.56.3 md5	f6f151463419f9820aa645f0893de8a4
+159.8.56.3 sha256	fcbdd1568b303b3d6479105b99625d8f5da306b2f4b40d88646090ed24644598
+159.8.56.3 yolo	true
+159.8.56.3 
+159.8.56.3 downloaded metadata file looks valid...
+159.8.56.3 downloading https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/13.04/x86_64/chef_11.6.0-1.ubuntu.13.04_amd64.deb
+159.8.56.3   to file /tmp/install.sh.25/chef_11.6.0-1.ubuntu.13.04_amd64.deb
+159.8.56.3 trying wget...
+159.8.56.3 Comparing checksum with sha256sum...
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 WARNING: Chef-Client has not been regression tested on this O/S Distribution
+159.8.56.3 WARNING: Do not use this configuration for Production Applications.  Use at your own risk.
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 Installing Chef 11.6.0
+159.8.56.3 
+159.8.56.3 installing with dpkg...
+159.8.56.3 
+159.8.56.3 Selecting previously unselected package chef.
+159.8.56.3 
+159.8.56.3 (Reading database ... 
+159.8.56.3 (Reading database ... 5%
+159.8.56.3 (Reading database ... 10%
+159.8.56.3 (Reading database ... 15%
+159.8.56.3 (Reading database ... 20%
+159.8.56.3 (Reading database ... 25%
+159.8.56.3 (Reading database ... 30%
+159.8.56.3 (Reading database ... 35%
+159.8.56.3 (Reading database ... 40%
+159.8.56.3 (Reading database ... 45%
+159.8.56.3 (Reading database ... 50%
+159.8.56.3 (Reading database ... 55%
+159.8.56.3 (Reading database ... 60%
+159.8.56.3 (Reading database ... 65%
+159.8.56.3 (Reading database ... 70%
+159.8.56.3 (Reading database ... 75%
+159.8.56.3 (Reading database ... 80%
+159.8.56.3 (Reading database ... 85%
+159.8.56.3 (Reading database ... 90%
+159.8.56.3 (Reading database ... 95%
+159.8.56.3 (Reading database ... 100%
+159.8.56.3 (Reading database ... 
+159.8.56.3 15864 files and directories currently installed.)
+159.8.56.3 
+159.8.56.3 Preparing to unpack .../chef_11.6.0-1.ubuntu.13.04_amd64.deb ...
+159.8.56.3 
+159.8.56.3 Unpacking chef (11.6.0-1.ubuntu.13.04) ...
+159.8.56.3 
+159.8.56.3 Setting up chef (11.6.0-1.ubuntu.13.04) ...
+159.8.56.3 
+159.8.56.3 Thank you for installing Chef!
+159.8.56.3 
+159.8.56.3 Starting Chef Client, version 11.6.0[0m
+159.8.56.3 
+159.8.56.3 Creating a new client identity for bfe0f01a0668 using the validator key.[0m
+159.8.56.3 
+159.8.56.3 resolving cookbooks for run list: ["apt", "resource_asg_cookbookfile", "nodeJsdb"][0m
+159.8.56.3 
+159.8.56.3 Synchronizing Cookbooks:[0m
+159.8.56.3 
+159.8.56.3   - apt[0m
+159.8.56.3 
+159.8.56.3   - resource_asg_cookbookfile[0m
+159.8.56.3 
+159.8.56.3   - nodeJsdb[0m
+159.8.56.3 
+159.8.56.3 Compiling Cookbooks...[0m
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Cloning resource attributes for execute[/etc/init.d/mysql start] from prior resource (CHEF-3694)
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Previous execute[/etc/init.d/mysql start]: /var/chef/cache/cookbooks/nodeJsdb/recipes/default.rb:28:in `from_file'
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Current  execute[/etc/init.d/mysql start]: /var/chef/cache/cookbooks/nodeJsdb/recipes/default.rb:41:in `from_file'
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Cloning resource attributes for execute[restart mysql] from prior resource (CHEF-3694)
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Previous execute[restart mysql]: /var/chef/cache/cookbooks/nodeJsdb/recipes/default.rb:31:in `from_file'
+159.8.56.3 
+159.8.56.3 [2014-12-03T12:33:20+00:00] WARN: Current  execute[restart mysql]: /var/chef/cache/cookbooks/nodeJsdb/recipes/default.rb:44:in `from_file'
+159.8.56.3 
+159.8.56.3 Converging 29 resources[0m
+159.8.56.3 
+159.8.56.3 Recipe: apt::default[0m
+159.8.56.3 
+159.8.56.3   * execute[apt-get-update] action run[0m
+159.8.56.3 [2014-12-03T12:33:28+00:00] ERROR: execute[apt-get-update] (apt::default line 45) had an error: Expected process to exit with [0], but received '100'
+159.8.56.3 
+159.8.56.3 ---- Begin output of apt-get update ----
+159.8.56.3 
+159.8.56.3 STDOUT: Ign http://archive.ubuntu.com trusty InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-updates InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-security InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-proposed InRelease
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty Release.gpg
+159.8.56.3 
+159.8.56.3 Get:1 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+159.8.56.3 
+159.8.56.3 Get:2 http://archive.ubuntu.com trusty-security Release.gpg [933 B]
+159.8.56.3 
+159.8.56.3 Get:3 http://archive.ubuntu.com trusty-proposed Release.gpg [933 B]
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty Release
+159.8.56.3 
+159.8.56.3 Get:4 http://archive.ubuntu.com trusty-updates Release [62.0 kB]
+159.8.56.3 
+159.8.56.3 Get:5 http://archive.ubuntu.com trusty-security Release [62.0 kB]
+159.8.56.3 
+159.8.56.3 Get:6 http://archive.ubuntu.com trusty-proposed Release [209 kB]
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/main Sources
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/restricted Sources
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/universe Sources
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/main amd64 Packages
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+159.8.56.3 
+159.8.56.3 Get:7 http://archive.ubuntu.com trusty-updates/main Sources [185 kB]
+159.8.56.3 
+159.8.56.3 Get:8 http://archive.ubuntu.com trusty-updates/restricted Sources [1250 B]
+159.8.56.3 
+159.8.56.3 Get:9 http://archive.ubuntu.com trusty-updates/universe Sources [115 kB]
+159.8.56.3 
+159.8.56.3 Get:10 http://archive.ubuntu.com trusty-updates/main amd64 Packages [472 kB]
+159.8.56.3 
+159.8.56.3 Get:11 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [6341 B]
+159.8.56.3 
+159.8.56.3 Get:12 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [288 kB]
+159.8.56.3 
+159.8.56.3 Get:13 http://archive.ubuntu.com trusty-security/main Sources [65.3 kB]
+159.8.56.3 
+159.8.56.3 Get:14 http://archive.ubuntu.com trusty-security/restricted Sources [40 B]
+159.8.56.3 
+159.8.56.3 Get:15 http://archive.ubuntu.com trusty-security/universe Sources [19.1 kB]
+159.8.56.3 
+159.8.56.3 Get:16 http://archive.ubuntu.com trusty-security/main amd64 Packages [209 kB]
+159.8.56.3 
+159.8.56.3 Get:17 http://archive.ubuntu.com trusty-se
+159.8.56.3 curity/restricted amd64 Packages [40 B]
+159.8.56.3 
+159.8.56.3 Get:18 http://archive.ubuntu.com trusty-security/universe amd64 Packages [94.0 kB]
+159.8.56.3 
+159.8.56.3 Get:19 http://archive.ubuntu.com trusty-proposed/main amd64 Packages [190 kB]
+159.8.56.3 
+159.8.56.3 Get:20 http://archive.ubuntu.com trusty-proposed/restricted amd64 Packages [40 B]
+159.8.56.3 
+159.8.56.3 Fetched 1981 kB in 5s (348 kB/s)
+159.8.56.3 
+159.8.56.3 STDERR: W: Size of file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_main_binary-amd64_Packages.gz is not what the server reported 472027 472291
+159.8.56.3 
+159.8.56.3 W: Size of file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_universe_binary-amd64_Packages.gz is not what the server reported 288155 288238
+159.8.56.3 
+159.8.56.3 W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/binary-amd64/Packages  Hash Sum mismatch
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/universe/binary-amd64/Packages  Hash Sum mismatch
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 E: Some index files failed to download. They have been ignored, or old ones used instead.
+159.8.56.3 
+159.8.56.3 ---- End output of apt-get update ----
+159.8.56.3 Ran apt-get update returned 100; ignore_failure is set, continuing
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 ================================================================================[0m
+159.8.56.3 
+159.8.56.3 [31mError executing action `run` on resource 'execute[apt-get-update]'[0m
+159.8.56.3 
+159.8.56.3 ================================================================================[0m
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 Mixlib::ShellOut::ShellCommandFailed[0m
+159.8.56.3 
+159.8.56.3 ------------------------------------[0m
+159.8.56.3 
+159.8.56.3 Expected process to exit with [0], but received '100'
+159.8.56.3 
+159.8.56.3 ---- Begin output of apt-get update ----
+159.8.56.3 
+159.8.56.3 STDOUT: Ign http://archive.ubuntu.com trusty InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-updates InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-security InRelease
+159.8.56.3 
+159.8.56.3 Ign http://archive.ubuntu.com trusty-proposed InRelease
+159.8.56.3 
+159.8.56.3 Hit http://archive.ubuntu.com trusty Release.gpg
+159.8.56.3 Get:1 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+159.8.56.3 Get:2 http://archive.ubuntu.com trusty-security Release.gpg [933 B]
+159.8.56.3 Get:3 http://archive.ubuntu.com trusty-proposed Release.gpg [933 B]
+159.8.56.3 Hit http://archive.ubuntu.com trusty Release
+159.8.56.3 Get:4 http://archive.ubuntu.com trusty-updates Release [62.0 kB]
+159.8.56.3 Get:5 http://archive.ubuntu.com trusty-security Release [62.0 kB]
+159.8.56.3 Get:6 http://archive.ubuntu.com trusty-proposed Release [209 kB]
+159.8.56.3 Hit http://archive.ubuntu.com trusty/main Sources
+159.8.56.3 Hit http://archive.ubuntu.com trusty/restricted Sources
+159.8.56.3 Hit http://archive.ubuntu.com trusty/universe Sources
+159.8.56.3 Hit http://archive.ubuntu.com trusty/main amd64 Packages
+159.8.56.3 Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+159.8.56.3 Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+159.8.56.3 Get:7 http://archive.ubuntu.com trusty-updates/main Sources [185 kB]
+159.8.56.3 Get:8 http://archive.ubuntu.com trusty-updates/restricted Sources [1250 B]
+159.8.56.3 Get:9 http://archive.ubuntu.com trusty-updates/universe Sources [115 kB]
+159.8.56.3 Get:10 http://archive.ubuntu.com trusty-updates/main amd64 Packages [472 kB]
+159.8.56.3 Get:11 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [6341 B]
+159.8.56.3 Get:12 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [288 kB]
+159.8.56.3 Get:13 http://archive.ubuntu.com trusty-security/main Sources [65.3 kB]
+159.8.56.3 Get:14 http://archive.ubuntu.com trusty-security/restricted Sources [40 B]
+159.8.56.3 Get:15 http://archive.ubuntu.com trusty-security/universe Sources [19.1 kB]
+159.8.56.3 Get:16 http://archive.ubuntu.com trusty-security/main amd64 Packages [209 kB]
+159.8.56.3 
+159.8.56.3 Get:17 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [40 B]
+159.8.56.3 Get:18 http://archive.ubuntu.com trusty-security/universe amd64 Packages [94.0 kB]
+159.8.56.3 Get:19 http://archive.ubuntu.com trusty-proposed/main amd64 Packages [190 kB]
+159.8.56.3 Get:20 http://archive.ubuntu.com trusty-proposed/restricted amd64 Packages [40 B]
+159.8.56.3 Fetched 1981 kB in 5s (348 kB/s)
+159.8.56.3 STDERR: W: Size of file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_main_binary-amd64_Packages.gz is not what the server reported 472027 472291
+159.8.56.3 W: Size of file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_universe_binary-amd64_Packages.gz is not what the server reported 288155 288238
+159.8.56.3 W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/binary-amd64/Packages  Hash Sum mismatch
+159.8.56.3 
+159.8.56.3 W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/universe/binary-amd64/Packages  Hash Sum mismatch
+159.8.56.3 
+159.8.56.3 E: Some index files failed to download. They have been ignored, or old ones used instead.
+159.8.56.3 ---- End output of apt-get update ----
+159.8.56.3 Ran apt-get update returned 100[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 Resource Declaration:[0m
+159.8.56.3 ---------------------[0m
+159.8.56.3 # In /var/chef/cache/cookbooks/apt/recipes/default.rb
+159.8.56.3 
+159.8.56.3 
+159.8.56.3  45: execute 'apt-get-update' do
+159.8.56.3  46:   command 'apt-get update'
+159.8.56.3  47:   ignore_failure true
+159.8.56.3  48:   only_if { apt_installed? }
+159.8.56.3  49:   not_if { ::File.exist?('/var/lib/apt/periodic/update-success-stamp') }
+159.8.56.3  50: end
+159.8.56.3  51: 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 Compiled Resource:[0m
+159.8.56.3 
+159.8.56.3 ------------------[0m
+159.8.56.3 # Declared in /var/chef/cache/cookbooks/apt/recipes/default.rb:45:in `from_file'
+159.8.56.3 
+159.8.56.3 
+159.8.56.3 execute("apt-get-update") do
+159.8.56.3   action "run"
+159.8.56.3   ignore_failure true
+159.8.56.3   retries 0
+159.8.56.3   retry_delay 2
+159.8.56.3   command "apt-get update"
+159.8.56.3   backup 5
+159.8.56.3   returns 0
+159.8.56.3   cookbook_name "apt"
+159.8.56.3   recipe_name "default"
+159.8.56.3   not_if { #code block }
+159.8.56.3   only_if { #code block }
+159.8.56.3 end
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[apt-get update] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3 
+159.8.56.3   * execute[apt-get autoremove] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3 
+159.8.56.3   * execute[apt-get autoclean] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3 
+159.8.56.3   * package[update-notifier-common] action install[0m
+159.8.56.3 [32m
+159.8.56.3     - install version 0.154.1 of package update-notifier-common[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[apt-get-update] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute apt-get update[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[apt-get-update-periodic] action run[0m
+159.8.56.3  (skipped due to only_if)[0m
+159.8.56.3   * directory[/var/cache/local] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /var/cache/local[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0755'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * directory[/var/cache/local/preseeding] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /var/cache/local/preseeding[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0755'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 Recipe: resource_asg_cookbookfile::default[0m
+159.8.56.3   * remote_directory[/tmp/nodejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 Recipe: <Dynamically Defined Resource>[0m
+159.8.56.3   * directory[/tmp/nodejs/views/layouts] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs/views/layouts[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/layouts/header.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/layouts/header.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/layouts/header.ejs from none to cff609[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/layouts/header.ejs
+159.8.56.3 	2014-12-03 12:34:00.942667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.header.ejs20141203-105-jbmkcr	2014-12-03 12:34:00.986667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,11 @@[0m
+159.8.56.3 [37m
+159.8.56.3         +<!DOCTYPE html>[0m
+159.8.56.3 [37m
+159.8.56.3         +</html>[0m
+159.8.56.3 [37m
+159.8.56.3         +    <head>[0m
+159.8.56.3 [37m
+159.8.56.3         +        <title>Contoh CRUD Node.js-MySQL</title>[0m
+159.8.56.3 [37m
+159.8.56.3         +        <link href="/../css/style.css" rel="stylesheet">[0m
+159.8.56.3 [37m
+159.8.56.3         +        <script type="text/javascript" src="/../js/all.js"></script>[0m
+159.8.56.3 [37m
+159.8.56.3         +    </head>[0m
+159.8.56.3 [37m
+159.8.56.3         +    <body>[0m[37m
+159.8.56.3         +        <div id="wrapper">[0m
+159.8.56.3 [37m
+159.8.56.3         +            <div class="page-header"><h2><%=page_title%></h2></div>[0m
+159.8.56.3 [37m
+159.8.56.3         +            <div class="page-container">[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/layouts/footer.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/layouts/footer.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/layouts/footer.ejs from none to 97e4f4[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/layouts/footer.ejs	
+159.8.56.3 2014-12-03 12:34:01.034667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.footer.ejs20141203-105-1edsqh5	2014-12-03 12:34:01.046667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,7 @@[0m[37m
+159.8.56.3 
+159.8.56.3         +      </div>[0m[37m
+159.8.56.3 
+159.8.56.3         +            <div id="footer">[0m[37m
+159.8.56.3 
+159.8.56.3         +                <img src="/../images/logo.png">[0m
+159.8.56.3 [37m
+159.8.56.3         +            </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +        </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +    </body>[0m
+159.8.56.3 [37m
+159.8.56.3         +</html>[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/index.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/index.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/index.ejs from none to 08414a[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/index.ejs	2014-12-03 12:34:01.090667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.index.ejs20141203-105-11siyx7	2014-12-03 12:34:01.102667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,12 @@[0m[37m
+159.8.56.3         +<html>[0m
+159.8.56.3 [37m
+159.8.56.3         +    <head>[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m[37m
+159.8.56.3         +        <title><%=(locals.title) ? title :''%></title>[0m[37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    </head>[0m
+159.8.56.3 [37m
+159.8.56.3         +    <body>[0m[37m
+159.8.56.3 
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +        <h2>Hello world<h2>[0m
+159.8.56.3 [37m
+159.8.56.3         +    </body>[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +</html>[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/edit_customer.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/edit_customer.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/edit_customer.ejs from none to ef3bd7[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/edit_customer.ejs
+159.8.56.3 	2014-12-03 12:34:01.142667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.edit_customer.ejs20141203-105-5jornx	2014-12-03 12:34:01.154667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,34 @@[0m
+159.8.56.3 [37m
+159.8.56.3         +<%- include layouts/header.ejs %>[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +        <div class="page-data">[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +            <form method="post" action="/customers/edit/<%=data[0].id%>">[0m
+159.8.56.3 [37m
+159.8.56.3         +                <table cellpadding="11">[0m
+159.8.56.3 [37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label">Name</td><td>: <input type="text" name="name" value="<%=data[0].name%>" required></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label" valign="top">Address</td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td valign="top">: [0m
+159.8.56.3 [37m
+159.8.56.3         +                        <textarea name="address" required cols="30" rows="5"><%=data[0].address%></textarea>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    </td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label">Email</td><td>: <input type="text" value="<%=data[0].email%>" name="email" required></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                  <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label">Phone</td><td>: <input type="text" name="phone" value="<%=data[0].phone%>" required></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label"></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                        &nbsp; <input type="submit" name="submit" value="Save">[0m
+159.8.56.3 [37m
+159.8.56.3         +                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">[0m[37m
+159.8.56.3 
+159.8.56.3         +                    </td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                </table>[0m
+159.8.56.3 [37m
+159.8.56.3         +            </form>[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +        </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +<%- include layouts/footer.ejs %>[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/customers.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/customers.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/customers.ejs from none to 990688[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/customers.ejs	2014-12-03 12:34:01.198667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.customers.ejs20141203-105-113h3oa	2014-12-03 12:34:01.210667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,49 @@[0m[37m
+159.8.56.3         +<%- include layouts/header.ejs %>[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +        <div class="page-data">[0m
+159.8.56.3 [37m
+159.8.56.3         +         <div class="data-btn">[0m[37m
+159.8.56.3         +           <button onClick="addUser();">+ Add</button>[0m[37m
+159.8.56.3         +         </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +         <div class="data-table">[0m
+159.8.56.3 [37m
+159.8.56.3         +            <table border="1" cellpadding="7" cellspacing="7">[0m
+159.8.56.3 [37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <th width="50px">No</th>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <th>Name</th>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <th>Address</th>[0m
+159.8.56.3 [37m
+159.8.56.3 
+159.8.56.3         +                    <th>Phone</th>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <th>Email</th>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <th width="120px">Action</th>[0m
+159.8.56.3 [37m
+159.8.56.3         +                </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                               [0m
+159.8.56.3 [37m
+159.8.56.3         +                <% if(data.length){ [0m
+159.8.56.3 [37m
+159.8.56.3         +                                [0m
+159.8.56.3 [37m
+159.8.56.3         +                 for(var i = 0;i < data.length;i++) { %>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 [0m
+159.8.56.3 [37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td><%=(i+1)%></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td><%=data[i].name%></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td><%=data[i].address%></td>[0m
+159.8.56.3 [37m
+159.8.56.3 
+159.8.56.3         +                    <td><%=data[i].phone%></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td><%=data[i].email%></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td>[0m[37m
+159.8.56.3 
+159.8.56.3         +                        <a class="a-inside edit" href="../customers/edit/<%=data[i].id%>">Edit</a>[0m
+159.8.56.3 [37m
+159.8.56.3         +                       [0m
+159.8.56.3 [37m
+159.8.56.3         +                        <a class="a-inside delete" href="../customers/delete/<%=data[i].id%>">Delete</a>[0m
+159.8.56.3 [37m
+159.8.56.3         +                       [0m[37m
+159.8.56.3 
+159.8.56.3         +                    </td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +            <% }[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +             }else{ %>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td colspan="3">No user</td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +            <% } %>[0m
+159.8.56.3 [37m
+159.8.56.3 
+159.8.56.3         +                [0m
+159.8.56.3 [37m
+159.8.56.3         +                              [0m
+159.8.56.3 [37m
+159.8.56.3         +                [0m
+159.8.56.3 [37m
+159.8.56.3         +            </table>[0m
+159.8.56.3 [37m
+159.8.56.3         +         </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +        </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +<%- include layouts/footer.ejs %>[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * cookbook_file[/tmp/nodejs/views/add_customer.ejs] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/views/add_customer.ejs[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/views/add_customer.ejs from none to 6a00dc[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/views/add_customer.ejs	2014-12-03 12:34:01.250667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.add_customer.ejs20141203-105-qe0goq	2014-12-03 12:34:01.262667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,31 @@[0m[37m
+159.8.56.3         +<%- include layouts/header.ejs %>[0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +        <div class="page-data">[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +            <form method="post" action="/customers/add">[0m[37m
+159.8.56.3 
+159.8.56.3         +                <table cellpadding="11">[0m[37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label">Name</td><td>: <input type="text" name="name" required></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 <tr>[0m[37m
+159.8.56.3 
+159.8.56.3         +                    <td class="label" valign="top">Address</td><td valign="top">: <textarea name="address" required cols="30" rows="5"></textarea></td>[0m[37m
+159.8.56.3         +                </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label">Email</td><td>: <input type="text" name="email" required></td>[0m[37m
+159.8.56.3         +                 </tr>[0m[37m
+159.8.56.3         +                  <tr>[0m[37m
+159.8.56.3         +                    <td class="label">Phone</td><td>: <input type="text" name="phone" required></td>[0m[37m
+159.8.56.3         +                 </tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                 <tr>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td class="label"></td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                    <td>[0m
+159.8.56.3 [37m
+159.8.56.3         +                        &nbsp; <input type="submit" name="submit" value="Save">[0m[37m
+159.8.56.3 
+159.8.56.3         +                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">[0m[37m
+159.8.56.3         +                    </td>[0m[37m
+159.8.56.3         +                 </tr>[0m[37m
+159.8.56.3         +                </table>[0m
+159.8.56.3 [37m
+159.8.56.3         +            </form>[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m[37m
+159.8.56.3         +        </div>[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +<%- include layouts/footer.ejs %>[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/run.sh] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/run.sh[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/run.sh from none to ea8763[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/run.sh	2014-12-03 12:34:01.310667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.run.sh20141203-105-5dtill	2014-12-03 12:34:01.322667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,23 @@[0m[37m
+159.8.56.3         + #!/bin/bash[0m
+159.8.56.3 [37m
+159.8.56.3         + [0m
+159.8.56.3 [37m
+159.8.56.3         +EXPECTED_ARGS=3[0m[37m
+159.8.56.3         +E_BADARGS=65[0m
+159.8.56.3 [37m
+159.8.56.3         +MYSQL=`which mysql`[0m
+159.8.56.3 [37m
+159.8.56.3         + [0m
+159.8.56.3 [37m
+159.8.56.3         +Q1="CREATE DATABASE IF NOT EXISTS $1;"[0m
+159.8.56.3 [37m
+159.8.56.3         +Q2="GRANT USAGE ON *.* TO $2@'%' IDENTIFIED BY '$3';"[0m[37m
+159.8.56.3         +Q3="GRANT ALL PRIVILEGES ON $1.* TO $2@'%';"[0m[37m
+159.8.56.3         +Q4="GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION;"[0m
+159.8.56.3 [37m
+159.8.56.3         +Q5="FLUSH PRIVILEGES;"[0m
+159.8.56.3 [37m
+159.8.56.3         +Q6="use nodejs;"[0m
+159.8.56.3 [37m
+159.8.56.3         +Q7="source customer.sql;"[0m
+159.8.56.3 [37m
+159.8.56.3         +SQL="${Q1}${Q2}${Q3}${Q4}${Q5}${Q6}${Q7}"[0m[37m
+159.8.56.3         + [0m[37m
+159.8.56.3         +if [ $# -ne $EXPECTED_ARGS ][0m
+159.8.56.3 [37m
+159.8.56.3         +then[0m
+159.8.56.3 [37m
+159.8.56.3         +  echo "Usage: $0 dbname dbuser dbpass"[0m
+159.8.56.3 [37m
+159.8.56.3         +  exit $E_BADARGS[0m
+159.8.56.3 [37m
+159.8.56.3         +fi[0m
+159.8.56.3 [37m
+159.8.56.3         + [0m
+159.8.56.3 [37m
+159.8.56.3         +$MYSQL -u root -e "$SQL"[0m
+159.8.56.3 [37m
+159.8.56.3 
+159.8.56.3         +[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * directory[/tmp/nodejs/routes] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs/routes[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * cookbook_file[/tmp/nodejs/routes/index.js] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/routes/index.js[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/routes/index.js from none to 967af5[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/routes/index.js	
+159.8.56.3 2014-12-03 12:34:01.370667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.index.js20141203-105-tnuske	2014-12-03 12:34:01.382667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,8 @@[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +/*[0m[37m
+159.8.56.3 
+159.8.56.3         + * GET home page.[0m[37m
+159.8.56.3         + */[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +exports.index = function(req, res){[0m[37m
+159.8.56.3         +  res.render('index', { title: 'Hello World' });[0m[37m
+159.8.56.3         +};[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/routes/customers.js] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/routes/customers.js[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/routes/customers.js from none to 70113e[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/routes/customers.js	2014-12-03 12:34:01.426667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.customers.js20141203-105-3gad8r	2014-12-03 12:34:01.438667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,131 @@[0m[37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +/*[0m
+159.8.56.3 [37m
+159.8.56.3         + * GET users listing.[0m[37m
+159.8.56.3         + */[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +exports.list = function(req, res){[0m[37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +  req.getConnection(function(err,connection){[0m
+159.8.56.3 [37m
+159.8.56.3         +       [0m
+159.8.56.3 [37m
+159.8.56.3         +        var query = connection.query('SELECT * FROM customer',function(err,rows)[0m[37m
+159.8.56.3         +        {[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +            if(err)[0m
+159.8.56.3 [37m
+159.8.56.3         +                console.log("Error Selecting : %s ",err );[0m[37m
+159.8.56.3 
+159.8.56.3         +     [0m[37m
+159.8.56.3         +            res.render('customers',{page_title:"Customers - Node.js",data:rows});[0m
+159.8.56.3 [37m
+159.8.56.3         +                [0m[37m
+159.8.56.3         +           [0m
+159.8.56.3 [37m
+159.8.56.3         +         });[0m
+159.8.56.3 [37m
+159.8.56.3         +         [0m[37m
+159.8.56.3         +         //console.log(query.sql);[0m[37m
+159.8.56.3         +    });[0m
+159.8.56.3 [37m
+159.8.56.3         +  [0m
+159.8.56.3 [37m
+159.8.56.3         +};[0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +exports.add = function(req, res){[0m
+159.8.56.3 [37m
+159.8.56.3         +  res.render('add_customer',{page_title:"Add Customers - Node.js"});[0m
+159.8.56.3 [37m
+159.8.56.3         +};[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +exports.edit = function(req, res){[0m[37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    var id = req.params.id;[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    req.getConnection(function(err,connection){[0m
+159.8.56.3 [37m
+159.8.56.3         +       [0m
+159.8.56.3 [37m
+159.8.56.3         +        var query = connection.query('SELECT * FROM customer WHERE id = ?',[id],function(err,rows)[0m[37m
+159.8.56.3         +        {[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +            if(err)[0m[37m
+159.8.56.3         +                console.log("Error Selecting : %s ",err );[0m
+159.8.56.3 [37m
+159.8.56.3         +     [0m
+159.8.56.3 [37m
+159.8.56.3         +            res.render('edit_customer',{page_title:"Edit Customers - Node.js",data:rows});[0m
+159.8.56.3 [37m
+159.8.56.3         +                [0m
+159.8.56.3 [37m
+159.8.56.3         +           [0m
+159.8.56.3 [37m
+159.8.56.3         +         });[0m
+159.8.56.3 [37m
+159.8.56.3         +         [0m
+159.8.56.3 [37m
+159.8.56.3         +         //console.log(query.sql);[0m
+159.8.56.3 [37m
+159.8.56.3         +    }); [0m[37m
+159.8.56.3         +};[0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +/*Save the customer*/[0m
+159.8.56.3 [37m
+159.8.56.3         +exports.save = function(req,res){[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    var input = JSON.parse(JSON.stringify(req.body));[0m[37m
+159.8.56.3         +    [0m[37m
+159.8.56.3         +    req.getConnection(function (err, connection) {[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +        var data = {[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m[37m
+159.8.56.3         +            name    : input.name,[0m[37m
+159.8.56.3         +            address : input.address,[0m
+159.8.56.3 [37m
+159.8.56.3         +            email   : input.email,[0m
+159.8.56.3 [37m
+159.8.56.3         +            phone   : input.phone [0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m[37m
+159.8.56.3         +        };[0m[37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +        var query = connection.query("INSERT INTO customer set ? ",data, function(err, rows)[0m
+159.8.56.3 [37m
+159.8.56.3         +        {[0m[37m
+159.8.56.3         +  [0m[37m
+159.8.56.3         +          if (err)[0m
+159.8.56.3 [37m
+159.8.56.3         +              console.log("Error inserting : %s ",err );[0m
+159.8.56.3 [37m
+159.8.56.3         +         [0m
+159.8.56.3 [37m
+159.8.56.3         +          res.redirect('/customers');[0m
+159.8.56.3 [37m
+159.8.56.3         +          [0m
+159.8.56.3 [37m
+159.8.56.3         +        });[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +       // console.log(query.sql); get raw query[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    });[0m
+159.8.56.3 [37m
+159.8.56.3         +};[0m[37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +exports.save_edit = function(req,res){[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    var input = JSON.parse(JSON.stringify(req.body));[0m
+159.8.56.3 [37m
+159.8.56.3         +    var id = req.params.id;[0m[37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    req.getConnection(function (err, connection) {[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +        var data = {[0m[37m
+159.8.56.3 
+159.8.56.3         +            [0m[37m
+159.8.56.3         +            name    : input.name,[0m
+159.8.56.3 [37m
+159.8.56.3         +            address : input.address,[0m
+159.8.56.3 [37m
+159.8.56.3         +            email   : input.email,[0m[37m
+159.8.56.3         +            phone   : input.phone [0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +        };[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m[37m
+159.8.56.3         +        connection.query("UPDATE customer set ? WHERE id = ? ",[data,id], function(err, rows)[0m
+159.8.56.3 [37m
+159.8.56.3         +        {[0m
+159.8.56.3 [37m
+159.8.56.3         +  [0m
+159.8.56.3 [37m
+159.8.56.3         +          if (err)[0m
+159.8.56.3 [37m
+159.8.56.3         +              console.log("Error Updating : %s ",err );[0m
+159.8.56.3 [37m
+159.8.56.3         +         [0m[37m
+159.8.56.3         +          res.redirect('/customers');[0m[37m
+159.8.56.3         +          [0m
+159.8.56.3 [37m
+159.8.56.3         +        });[0m[37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    });[0m
+159.8.56.3 [37m
+159.8.56.3         +};[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +exports.delete_customer = function(req,res){[0m
+159.8.56.3 [37m
+159.8.56.3         +          [0m
+159.8.56.3 [37m
+159.8.56.3         +     var id = req.params.id;[0m[37m
+159.8.56.3         +    [0m[37m
+159.8.56.3         +     req.getConnection(function (err, connection) {[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m[37m
+159.8.56.3 
+159.8.56.3         +        connection.query("DELETE FROM customer  WHERE id = ? ",[id], function(err, rows)[0m
+159.8.56.3 [37m
+159.8.56.3         +        {[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m[37m
+159.8.56.3         +             if(err)[0m[37m
+159.8.56.3         +                 console.log("Error deleting : %s ",err );[0m
+159.8.56.3 [37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +             res.redirect('/customers');[0m
+159.8.56.3 [37m
+159.8.56.3         +             [0m[37m
+159.8.56.3         +        });[0m[37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +     });[0m
+159.8.56.3 [37m
+159.8.56.3         +};[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/readme.md] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/readme.md[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/readme.md from none to f5de16[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/readme.md	2014-12-03 12:34:01.530667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.readme.md20141203-105-zvunpe	2014-12-03 12:34:01.542667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,25 @@[0m[37m
+159.8.56.3         +This is a very basic example of CRUD in Node.js n mySQL.[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +Installation,Live DEMO, and tutorial here : http://teknosains.com/i/simple-crud-nodejs-mysql[0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +## Installation[0m
+159.8.56.3 [37m
+159.8.56.3         +*for newbies : Clone or download zip to your machine then hit this :[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +	npm install[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +	
+159.8.56.3 [0m[37m
+159.8.56.3         +## Configuration (database)[0m
+159.8.56.3 [37m
+159.8.56.3         +app.js[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +        host: 'localhost',[0m
+159.8.56.3 [37m
+159.8.56.3         +        user: 'root',[0m[37m
+159.8.56.3         +        password : 'root',[0m[37m
+159.8.56.3         +        port : 3306, //port mysql[0m
+159.8.56.3 [37m
+159.8.56.3         +        database:'nodejs'	[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +
+159.8.56.3 	[0m[37m
+159.8.56.3         +You're gonna need to create a DB named 'nodejs' and import customer.sql[0m[37m
+159.8.56.3         +Author_:- Jai jagani[0m
+159.8.56.3 [37m
+159.8.56.3         +## NOTES[0m
+159.8.56.3 [37m
+159.8.56.3         +This repo still use Express 3, you might want to upgrade yourself or you can Go here (https://github.com/codetrash/rest-crud) for newest Express [0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * directory[/tmp/nodejs/public/js] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs/public/js[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m[32m
+159.8.56.3 
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/public/js/all.js] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/public/js/all.js[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/public/js/all.js from none to a41ee1[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/public/js/all.js	2014-12-03 12:34:01.630667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.all.js20141203-105-x04hny	2014-12-03 12:34:01.642667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,8 @@[0m[37m
+159.8.56.3         +function addUser(){[0m[37m
+159.8.56.3         +            [0m
+159.8.56.3 [37m
+159.8.56.3         +    window.location.href = '/customers/add';[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m[37m
+159.8.56.3         +function cancelAdd(){[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    window.location.href = '/customers';[0m[37m
+159.8.56.3         +}[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * directory[/tmp/nodejs/public/images] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs/public/images[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/public/images/logo.png] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/public/images/logo.png[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/public/images/logo.png from none to 64c487[0m
+159.8.56.3 [37m
+159.8.56.3         (new content is binary, diff output suppressed)[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * directory[/tmp/nodejs/public/css] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new directory /tmp/nodejs/public/css[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 [32m
+159.8.56.3     - change group from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * cookbook_file[/tmp/nodejs/public/css/style.css] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/public/css/style.css[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/public/css/style.css from none to 37fbd5[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/public/css/style.css	2014-12-03 12:34:01.750667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.style.css20141203-105-ysol6c	2014-12-03 12:34:01.758667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,69 @@[0m[37m
+159.8.56.3         +body {[0m[37m
+159.8.56.3         +  margin:0;[0m
+159.8.56.3 [37m
+159.8.56.3         +  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;[0m
+159.8.56.3 [37m
+159.8.56.3         +  background:#eee;[0m[37m
+159.8.56.3         +  width:100%;[0m
+159.8.56.3 [37m
+159.8.56.3         +  height:100%;[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m[37m
+159.8.56.3         +*{[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +    border-radius:0px;[0m[37m
+159.8.56.3 
+159.8.56.3         +}[0m[37m
+159.8.56.3         +a {[0m
+159.8.56.3 [37m
+159.8.56.3         +  color: #00B7FF;[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +#wrapper{[0m[37m
+159.8.56.3         +    [0m[37m
+159.8.56.3         +    margin-top:30px;[0m[37m
+159.8.56.3         +    width:90%;[0m
+159.8.56.3 [37m
+159.8.56.3         +    min-height:600px;[0m
+159.8.56.3 [37m
+159.8.56.3         +    margin-left:5%;[0m
+159.8.56.3 [37m
+159.8.56.3         +    border:1px solid #ddd;[0m
+159.8.56.3 [37m
+159.8.56.3         +    background:#fff;[0m
+159.8.56.3 [37m
+159.8.56.3         +   [0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +.page-container{padding:20px;}[0m
+159.8.56.3 [37m
+159.8.56.3         +.page-data{padding:10px;}[0m[37m
+159.8.56.3         +.page-header{[0m[37m
+159.8.56.3         +    [0m[37m
+159.8.56.3         +    padding:2px;[0m[37m
+159.8.56.3 
+159.8.56.3         +    padding-left:40px;[0m[37m
+159.8.56.3         +    background:#665847;color:#FEFFFD;[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +.data-btn{padding-left:8px}[0m
+159.8.56.3 [37m
+159.8.56.3         +.data-btn button{[0m[37m
+159.8.56.3 
+159.8.56.3         +    padding:10px 20px;background:#FF9900;border:1px solid #fff;[0m[37m
+159.8.56.3         +    color:#FEFFFD;font-weight:bold;[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +.data-table{padding-left:10px;}[0m[37m
+159.8.56.3 
+159.8.56.3         +.data-table table{border-collapse:collapse;border:1px solid #ddd;width:100%}[0m[37m
+159.8.56.3         +.a-inside{padding:4px 10px;border:1px solid #fff;text-decoration:none;}[0m[37m
+159.8.56.3         +.a-inside.edit{background-color:#00CC00;color:#fff;}[0m
+159.8.56.3 [37m
+159.8.56.3         +.a-inside.delete{background-color:#D23641;color:#fff;}[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +input[type="text"]{[0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    border:1px solid #ddd;[0m
+159.8.56.3 [37m
+159.8.56.3         +    height:26px;[0m
+159.8.56.3 [37m
+159.8.56.3         +    width:300px;[0m[37m
+159.8.56.3         +}[0m[37m
+159.8.56.3         +.cancel{[0m[37m
+159.8.56.3         +    background-color:#D23641;color:#fff;[0m
+159.8.56.3 [37m
+159.8.56.3         +    border:1px solid #d32132;color:#fff;[0m[37m
+159.8.56.3         +    padding:8px 35px;font-weight:bold;[0m
+159.8.56.3 [37m
+159.8.56.3         +   [0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +input[type="submit"]{[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +    border:1px solid #6599FF;color:#fff;[0m
+159.8.56.3 [37m
+159.8.56.3         +    padding:8px 35px;font-weight:bold;[0m
+159.8.56.3 [37m
+159.8.56.3         +    background:#6599FF;[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +textarea{ border:1px solid #ddd;width:296px;}[0m
+159.8.56.3 [37m
+159.8.56.3         +.label{font-weight:bold;}[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +#footer{margin-left:82%;margin-top:10%}[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/package.json] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/package.json[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/package.json from none to fb03f0[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/package.json	2014-12-03 12:34:01.850667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.package.json20141203-105-15gweiv	2014-12-03 12:34:01.858667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,15 @@[0m[37m
+159.8.56.3         +{[0m[37m
+159.8.56.3         +  "name": "application-name",[0m
+159.8.56.3 [37m
+159.8.56.3         +  "version": "0.0.1",[0m[37m
+159.8.56.3         +  "private": true,[0m[37m
+159.8.56.3         +  "scripts": {[0m
+159.8.56.3 [37m
+159.8.56.3         +    "start": "node app.js"[0m[37m
+159.8.56.3 
+159.8.56.3         +  },[0m[37m
+159.8.56.3         +  "dependencies": {[0m[37m
+159.8.56.3         +    "ejs": "^1.0.0",[0m[37m
+159.8.56.3         +    "express": "3.5.1",[0m
+159.8.56.3 [37m
+159.8.56.3         +    "express-myconnection": "1.0.4",[0m[37m
+159.8.56.3 
+159.8.56.3         +    "jade": "*",[0m[37m
+159.8.56.3         +    "mysql": "2.2.0"[0m
+159.8.56.3 [37m
+159.8.56.3         +  }[0m
+159.8.56.3 [37m
+159.8.56.3         +}[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/knife.rb] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/knife.rb[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/knife.rb from none to 405b9f[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/knife.rb	2014-12-03 12:34:01.946667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.knife.rb20141203-105-qot2fz	2014-12-03 12:34:01.958667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,12 @@[0m[37m
+159.8.56.3         +log_level                :info[0m
+159.8.56.3 [37m
+159.8.56.3         +log_location             STDOUT[0m[37m
+159.8.56.3 
+159.8.56.3         +node_name                'station1'[0m[37m
+159.8.56.3         +client_key               '/root/chef-repo/.chef/station1.pem'[0m
+159.8.56.3 [37m
+159.8.56.3         +validation_client_name   'chef-validator'[0m
+159.8.56.3 [37m
+159.8.56.3         +validation_key           '/root/chef-repo/.chef/chef-validator.pem'[0m
+159.8.56.3 [37m
+159.8.56.3         +chef_server_url          'https://5.153.32.20:443'[0m[37m
+159.8.56.3         +syntax_check_cache_path  '/root/chef-repo/.chef/syntax_check_cache'[0m[37m
+159.8.56.3         +cookbook_path [ '~/chef-repo/cookbooks' ][0m
+159.8.56.3 [37m
+159.8.56.3         +#cookbook_path [ '~/chef-repo/cookbooks', '~/chef-repo/mdxp-cookbooks' , '~/chef-repo/opscode-cookbooks' ][0m
+159.8.56.3 [37m
+159.8.56.3         +knife[:softlayer_username] = 'alkesh_dagade'[0m
+159.8.56.3 [37m
+159.8.56.3         +knife[:softlayer_api_key]  = '26a84cd5dad20e0ae6ecd7daef2604d65127edd9d4ca2d9564607fde0aba9654'[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/frontendip1.txt] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/frontendip1.txt[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/frontendip1.txt from none to f47441[0m
+159.8.56.3 [37m
+159.8.56.3         (new content is binary, diff output suppressed)[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/databaseip.txt] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/databaseip.txt[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/databaseip.txt from none to ab80f6[0m
+159.8.56.3 [37m
+159.8.56.3         (new content is binary, diff output suppressed)[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/customer.sql] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/customer.sql[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/customer.sql from none to e3453d[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/customer.sql	2014-12-03 12:34:02.118667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         +++ /tmp/.customer.sql20141203-105-1cpmio8	2014-12-03 12:34:02.130667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,54 @@[0m[37m
+159.8.56.3         +-- MySQL dump 10.13  Distrib 5.5.40, for debian-linux-gnu (x86_64)[0m
+159.8.56.3 [37m
+159.8.56.3         +--[0m
+159.8.56.3 [37m
+159.8.56.3         +-- Host: localhost    Database: nodejs[0m[37m
+159.8.56.3         +-- ------------------------------------------------------[0m[37m
+159.8.56.3 
+159.8.56.3         +-- Server version	5.5.40-0ubuntu0.14.04.1[0m[37m
+159.8.56.3 
+159.8.56.3         +[0m[37m
+159.8.56.3         +/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET NAMES utf8 */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40103 SET TIME_ZONE='+00:00' */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +--[0m
+159.8.56.3 [37m
+159.8.56.3         +-- Table structure for table `customer`[0m
+159.8.56.3 [37m
+159.8.56.3         +--[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +DROP TABLE IF EXISTS `customer`;[0m[37m
+159.8.56.3         +/*!40101 SET @saved_cs_client     = @@character_set_client */;[0m[37m
+159.8.56.3         +/*!40101 SET character_set_client = utf8 */;[0m[37m
+159.8.56.3         +CREATE TABLE `customer` ([0m
+159.8.56.3 [37m
+159.8.56.3         +  `id` int(11) NOT NULL AUTO_INCREMENT,[0m
+159.8.56.3 [37m
+159.8.56.3         +  `name` varchar(200) NOT NULL,[0m
+159.8.56.3 [37m
+159.8.56.3         +  `address` text NOT NULL,[0m
+159.8.56.3 [37m
+159.8.56.3         +  `email` varchar(200) NOT NULL,[0m
+159.8.56.3 [37m
+159.8.56.3         +  `phone` varchar(20) NOT NULL,[0m[37m
+159.8.56.3         +  PRIMARY KEY (`id`)[0m
+159.8.56.3 [37m
+159.8.56.3         +) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET character_set_client = @saved_cs_client */;[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +--[0m
+159.8.56.3 [37m
+159.8.56.3         +-- Dumping data for table `customer`[0m
+159.8.56.3 [37m
+159.8.56.3         +--[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +LOCK TABLES `customer` WRITE;[0m[37m
+159.8.56.3         +/*!40000 ALTER TABLE `customer` DISABLE KEYS */;[0m
+159.8.56.3 [37m
+159.8.56.3         +INSERT INTO `customer` VALUES (2,'Nadya Eka','Jl. Ciwidey no 2000','nadya@yahoo.com','086454743743'),(3,'Amali','Jl. kemandoran no 10 Jakarta','amalia@langit.com','03937263623'),(4,'Angel ','Jl. Ciledug no 45A. tanggerang','angel@gmail.com','082271626121'),(5,'Ujang','Jl. ribut no 90 A','ujang@gmail.com','07846352532'),(6,'Memet','Blok cepu no 14. Bandung','memet@ongkek.com','038372636232'),(9,'Agung','Jl st Petersburg no 34. Russia','agung@yahoo.com','038373273262'),(10,'Jhon Taylor','St paris A . Block 43. paris','jtaylor@yahoo.com','039223232323'),(11,'jai jagani','hdfc colony, KSB chowk','jai.jagani@yahoo.in','9960426456');[0m[37m
+159.8.56.3         +/*!40000 ALTER TABLE `customer` ENABLE KEYS */;[0m
+159.8.56.3 [37m
+159.8.56.3         +UNLOCK TABLES;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;[0m[37m
+159.8.56.3         +/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;[0m[37m
+159.8.56.3         +/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;[0m[37m
+159.8.56.3 
+159.8.56.3         +/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;[0m
+159.8.56.3 [37m
+159.8.56.3         +/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +-- Dump completed on 2014-11-19 11:34:19[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/autobackupsql.sh] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/autobackupsql.sh[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/autobackupsql.sh from none to d084ba[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/autobackupsql.sh	2014-12-03 12:34:02.174667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.autobackupsql.sh20141203-105-axwgk1	2014-12-03 12:34:02.186667000 +0000[0m[37m
+159.8.56.3         @@ -0,0 +1,10 @@[0m
+159.8.56.3 [37m
+159.8.56.3         +while true; do[0m
+159.8.56.3 [37m
+159.8.56.3         +  [0m[37m
+159.8.56.3 
+159.8.56.3         +mysqldump -u root nodejs > customer.sql[0m
+159.8.56.3 [37m
+159.8.56.3         +git add customer.sql[0m
+159.8.56.3 [37m
+159.8.56.3         +git commit -m "first commit"[0m
+159.8.56.3 [37m
+159.8.56.3         +git push -u origin master[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3 
+159.8.56.3         +sleep 60[0m
+159.8.56.3 [37m
+159.8.56.3         +  kill $![0m
+159.8.56.3 [37m
+159.8.56.3         +done[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * cookbook_file[/tmp/nodejs/app.js] action create[0m
+159.8.56.3 [32m
+159.8.56.3     - create new file /tmp/nodejs/app.js[0m
+159.8.56.3 [32m
+159.8.56.3     - update content in file /tmp/nodejs/app.js from none to f0cbf6[0m
+159.8.56.3 [37m
+159.8.56.3         --- /tmp/nodejs/app.js	2014-12-03 12:34:02.226667000 +0000[0m[37m
+159.8.56.3         +++ /tmp/.app.js20141203-105-1i41mvv	2014-12-03 12:34:02.238667000 +0000[0m
+159.8.56.3 [37m
+159.8.56.3         @@ -0,0 +1,69 @@[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +/**[0m
+159.8.56.3 [37m
+159.8.56.3         + * Module dependencies.[0m
+159.8.56.3 [37m
+159.8.56.3         + */[0m[37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +var express = require('express');[0m
+159.8.56.3 [37m
+159.8.56.3         +var routes = require('./routes');[0m
+159.8.56.3 [37m
+159.8.56.3         +var http = require('http');[0m[37m
+159.8.56.3         +var path = require('path');[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +//load customers route[0m
+159.8.56.3 [37m
+159.8.56.3         +var customers = require('./routes/customers'); [0m
+159.8.56.3 [37m
+159.8.56.3         +var app = express();[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +var connection  = require('express-myconnection'); [0m
+159.8.56.3 [37m
+159.8.56.3         +var mysql = require('mysql');[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +// all environments[0m
+159.8.56.3 [37m
+159.8.56.3         +app.set('port', process.env.PORT || 4300);[0m
+159.8.56.3 [37m
+159.8.56.3         +app.set('views', path.join(__dirname, 'views'));[0m[37m
+159.8.56.3         +app.set('view engine', 'ejs');[0m[37m
+159.8.56.3         +//app.use(express.favicon());[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use(express.logger('dev'));[0m[37m
+159.8.56.3 
+159.8.56.3         +app.use(express.json());[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use(express.urlencoded());[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use(express.methodOverride());[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use(express.static(path.join(__dirname, 'public')));[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +// development only[0m
+159.8.56.3 [37m
+159.8.56.3         +if ('development' == app.get('env')) {[0m
+159.8.56.3 [37m
+159.8.56.3         +  app.use(express.errorHandler());[0m[37m
+159.8.56.3         +}[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +/*------------------------------------------[0m
+159.8.56.3 [37m
+159.8.56.3         +    connection peer, register as middleware[0m
+159.8.56.3 [37m
+159.8.56.3         +    type koneksi : single,pool and request [0m
+159.8.56.3 [37m
+159.8.56.3         +-------------------------------------------*/[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use([0m
+159.8.56.3 [37m
+159.8.56.3         +    [0m
+159.8.56.3 [37m
+159.8.56.3         +    connection(mysql,{[0m
+159.8.56.3 [37m
+159.8.56.3         +        [0m
+159.8.56.3 [37m
+159.8.56.3         +        host: 'localhost',[0m
+159.8.56.3 [37m
+159.8.56.3         +        user: 'root',[0m
+159.8.56.3 [37m
+159.8.56.3         +        password : '',[0m
+159.8.56.3 [37m
+159.8.56.3         +        port : 3306, //port mysql[0m
+159.8.56.3 [37m
+159.8.56.3         +        database:'nodejs'[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +    },'single') //or single[0m[37m
+159.8.56.3         +[0m[37m
+159.8.56.3         +);[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +app.get('/', routes.index);[0m[37m
+159.8.56.3 
+159.8.56.3         +app.get('/customers', customers.list);[0m[37m
+159.8.56.3         +app.get('/customers/add', customers.add);[0m
+159.8.56.3 [37m
+159.8.56.3         +app.post('/customers/add', customers.save);[0m
+159.8.56.3 [37m
+159.8.56.3         +app.get('/customers/delete/:id', customers.delete_customer);[0m[37m
+159.8.56.3         +app.get('/customers/edit/:id', customers.edit);[0m[37m
+159.8.56.3         +app.post('/customers/edit/:id',customers.save_edit);[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +app.use(app.router);[0m
+159.8.56.3 [37m
+159.8.56.3         +[0m
+159.8.56.3 [37m
+159.8.56.3         +http.createServer(app).listen(app.get('port'), function(){[0m
+159.8.56.3 [37m
+159.8.56.3         +  console.log('Express server listening on port ' + app.get('port'));[0m
+159.8.56.3 [37m
+159.8.56.3         +});[0m
+159.8.56.3 [32m
+159.8.56.3     - change mode from '' to '0777'[0m
+159.8.56.3 [32m
+159.8.56.3     - change owner from '' to 'root'[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 Recipe: nodeJsdb::default[0m
+159.8.56.3   * package[mysql-server] action install[0m
+159.8.56.3 [32m
+159.8.56.3     - install version 5.5.40-0ubuntu0.14.04.1 of package mysql-server[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * package[mysql-client] action install[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - install version 5.5.40-0ubuntu0.14.04.1 of package mysql-client[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * package[git] action install[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - install version 1:1.9.1-1 of package git[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * execute[sed -i 's/skip-external-locking/#skip-external-locking/g' /etc/mysql/my.cnf] action run[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - execute sed -i 's/skip-external-locking/#skip-external-locking/g' /etc/mysql/my.cnf[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * execute[sed -i 's/bind-address/#bind-address/g' /etc/mysql/my.cnf] action run[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - execute sed -i 's/bind-address/#bind-address/g' /etc/mysql/my.cnf[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * execute[/etc/init.d/mysql start] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute /etc/init.d/mysql start[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[restart mysql] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute restart mysql[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[./run.sh nodejs root '' ] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute ./run.sh nodejs root '' [0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[/etc/init.d/mysql start] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute /etc/init.d/mysql start[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[restart mysql] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute restart mysql[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[rm -rf chef] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute rm -rf chef[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git clone https://jai11:aug1234@github.com/jai11/chef.git] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git clone https://jai11:aug1234@github.com/jai11/chef.git[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git init] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git init[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git config --global user.email "jai.jagani@yahoo.in"] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git config --global user.email "jai.jagani@yahoo.in"[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git config --global user.name "jai11"] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git config --global user.name "jai11"[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git remote remove origin] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git remote remove origin[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[git remote add origin https://jai11:aug1234@github.com/jai11/chef.git] action run[0m
+159.8.56.3 [32m
+159.8.56.3     - execute git remote add origin https://jai11:aug1234@github.com/jai11/chef.git[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3   * execute[nohup ./autobackupsql.sh > gitoutput.log &] action run[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - execute nohup ./autobackupsql.sh > gitoutput.log &[0m
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * execute[some_command1] action run[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - execute nohup chef-client -i 60 -s 6 > chef-client.log &[0m
+159.8.56.3 [0m
+159.8.56.3   * ruby_block[some_command1_run_flag] action create[0m
+159.8.56.3 [32m
+159.8.56.3 
+159.8.56.3     - execute the ruby block some_command1_run_flag[0m
+159.8.56.3 
+159.8.56.3 [0m
+159.8.56.3 
+159.8.56.3   * ruby_block[some_command1_run_flag] action nothing[0m
+159.8.56.3  (skipped due to action :nothing)[0m
+159.8.56.3 
+159.8.56.3 Chef Client finished, 50 resources updated[0m
+159.8.56.3 
